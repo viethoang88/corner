@@ -1,0 +1,28 @@
+{
+  "name": "Ingredient",
+  "plural": "Ingredients",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nameEN": {
+      "type": "string",
+      "required": false
+    },
+    "nameVN": {
+      "type": "string",
+      "required": false
+    },
+    "visible": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

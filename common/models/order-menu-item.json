@@ -1,0 +1,29 @@
+{
+  "name": "OrderMenuItem",
+  "plural": "newModels",
+  "base": "Model",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "quantity": {
+      "type": "date",
+      "required": true
+    },
+    "comments": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "MenuItem": {
+      "type": "hasOne",
+      "model": "MenuItem",
+      "foreignKey": "menuItemId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

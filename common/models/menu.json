@@ -1,0 +1,30 @@
+{
+  "name": "Menu",
+  "plural": "Menus",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dateCreated": {
+      "type": "date"
+    },
+    "menuId": {
+      "type": "string",
+      "id": true,
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "MenuItem": {
+      "type": "hasMany",
+      "model": "MenuItem",
+      "foreignKey": "menuItemId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

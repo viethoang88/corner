@@ -1,0 +1,49 @@
+{
+  "name": "Order",
+  "plural": "Orders",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dateCreated": {
+      "type": "date"
+    },
+    "source": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "deliveryDate": {
+      "type": "date",
+      "required": false
+    },
+    "delivery": {
+      "type": "boolean"
+    },
+    "fee": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Branch": {
+      "type": "hasOne",
+      "model": "Branch",
+      "foreignKey": "name"
+    },
+    "OrderMenuItem": {
+      "type": "hasMany",
+      "model": "OrderMenuItem",
+      "foreignKey": "menuItemId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

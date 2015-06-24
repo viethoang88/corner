@@ -1,0 +1,74 @@
+<h1>Orders</h1>
+<hr>
+<form name="orderForm" novalidate ng-submit="placeOrder()">
+  <div class="form-group"
+      ng-class="{'has-error': orderForm.delivery.$invalid
+        && orderForm.delivery.$dirty}">
+    <label>Delivery
+    <input type="checkbox" class="form-control focus" name="delivery-checkbox"
+        placeholder="Delivery" required
+        ng-model="newOrder.delivery" on-click="changeDeliveryStatus()">
+    </label>
+  </div>
+
+  <div ng-show="newOrder.delivery" class="form-group"
+      ng-class="{'has-error': orderForm.telephone.$invalid
+        && orderForm.telephone.$dirty}">
+    <input type="text" class="form-control focus" name="telephone"
+        placeholder="Telephone" autocomplete="off" required
+        ng-model="newOrder.telephone">
+    <span class="has-error control-label" ng-show="
+        orderForm.telephone.$invalid && orderForm.telephone.$dirty">
+      Telephone is required.
+    </span>
+  </div>
+
+  <div ng-show="newOrder.delivery" class="form-group"
+      ng-class="{'has-error': orderForm.address.$invalid
+        && orderForm.address.$dirty}">
+    <input type="text" class="form-control focus" name="address"
+        placeholder="Address" autocomplete="off" required
+        ng-model="newOrder.address">
+    <span class="has-error control-label" ng-show="
+        orderForm.address.$invalid && orderForm.address.$dirty">
+      Address is required.
+    </span>
+  </div>
+
+  <div ng-show="newOrder.delivery" class="form-group"
+      ng-class="{'has-error': orderForm.time.$invalid
+        && orderForm.time.$dirty}">
+    <input type="text" class="form-control focus" name="time"
+        placeholder="Time" autocomplete="off" required
+        ng-model="newOrder.time">
+    <span class="has-error control-label" ng-show="
+        orderForm.time.$invalid && orderForm.time.$dirty">
+      Time is required.
+    </span>
+  </div>
+
+  <div ng-show="newOrder.delivery" class="form-group"
+      ng-class="{'has-error': orderForm.fee.$invalid
+        && orderForm.fee.$dirty}">
+    <input type="text" class="form-control focus" name="time"
+        placeholder="Fee" autocomplete="off" required
+        ng-model="newOrder.fee">
+    <span class="has-error control-label" ng-show="
+        orderForm.fee.$invalid && orderForm.fee.$dirty">
+      Time is required.
+    </span>
+  </div>
+
+  <button class="btn btn-default" ng-disabled="orderForm.$invalid">Add</button>
+</form>
+<hr>
+<div class="list-group">
+  <a class="list-group-item" ng-repeat="order in orders">{{order.content}}&nbsp;
+    <i class="glyphicon glyphicon-remove pull-right"
+        ng-click="removeorder(order)"></i></a>
+</div>
+
+<script type="text/javascript">
+  // $("[name='delivery-checkbox']").bootstrapSwitch({state: false, onText: 'Delivery', offText: 'In-house'});
+
+</script>

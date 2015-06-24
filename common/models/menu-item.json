@@ -1,0 +1,55 @@
+{
+  "name": "MenuItem",
+  "plural": "MenuItems",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "menuItemId": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "nameEN": {
+      "type": "string",
+      "required": true
+    },
+    "nameVN": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "priceSmall": {
+      "type": "number"
+    },
+    "priceMedium": {
+      "type": "number"
+    },
+    "priceLarge": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Ingredient": {
+      "type": "hasMany",
+      "model": "Ingredient",
+      "foreignKey": "nameEN"
+    },
+    "MenuItemCategory": {
+      "type": "hasOne",
+      "model": "MenuItemCategory",
+      "foreignKey": "nameEN"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

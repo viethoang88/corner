@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongo"
+  },
+  "AccessToken": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "MenuItem": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Ingredient": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Menu": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Table": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Order": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "OrderMenuItem": {
+    "dataSource": null,
+    "public": true
+  },
+  "Article": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Promotion": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "MenuItemCategory": {
+    "dataSource": null,
+    "public": true
+  },
+  "Branch": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "City": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "District": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Street": {
+    "dataSource": "mongo",
+    "public": true
+  }
+}
